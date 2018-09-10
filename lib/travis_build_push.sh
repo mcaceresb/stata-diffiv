@@ -25,6 +25,7 @@ if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
     ssh-add ${ID_RSA}
 
     echo "Pushing OSX files."
+    ssh-keyscan github.com >> ~/.ssh/known_hosts
     git push -f ${SSH_REPO} osx
 
     rm -f ${ID_RSA}

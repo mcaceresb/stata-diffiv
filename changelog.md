@@ -1,7 +1,17 @@
 Change Log
 ==========
 
-## diffiv-0.1.0 (2018-08-04)
+## diffiv-0.3.0 (2018-08-09)
+
+### Features
+
+- `diffiv` for OSX now available.
+
+### Bug fixes
+
+- `diffiv` with multiple threshold variables should work correctly.
+
+## diffiv-0.2.0 (2018-08-04)
 
 ### Features
 

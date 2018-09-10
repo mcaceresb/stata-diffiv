@@ -1,0 +1,9 @@
+language: c
+compiler:
+- gcc
+os:
+- linux
+- osx
+script:
+- make clean && make all
+# - "./lib/travis_build_push.sh"

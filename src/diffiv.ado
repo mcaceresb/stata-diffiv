@@ -107,14 +107,16 @@ program diffiv, sortpreserve
         }
         else {
             local K `threshold'
-            qui count if (`K' < 0)
-            if ( `r(N)' > 0 ) {
-                disp as err "threshold() variable cannot have negative values"
-                exit 198
-            }
             if ( `:list sizeof K' != `kz' ) {
                 disp as err "specify the same number of threshold variables"
                 exit 198
+            }
+            foreach var of varlist `K' {
+                qui count if (`var' < 0)
+                if ( `r(N)' > 0 ) {
+                    disp as err "threshold() variable cannot have negative values"
+                    exit 198
+                }
             }
         }
         markout `touse' `K'

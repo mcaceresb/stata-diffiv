@@ -3,7 +3,7 @@ diffiv
 
 Fast implementation of Gandhi and Houde (2016) style instruments (A3 version). Available for: Linux, OSX [![Travis Build Status](https://api.travis-ci.org/mcaceresb/stata-diffiv.svg?branch=develop)](https://travis-ci.org/mcaceresb/stata-diffiv).
 
-`version 0.3.0 09Sep2018`
+`version 0.3.1 09Sep2018`
 
 Installation
 ------------

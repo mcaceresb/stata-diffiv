@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 0.3.0 09Sep2018}{...}
+{* *! version 0.3.1 09Sep2018}{...}
 {viewerdialog diffiv "dialog diffiv"}{...}
 {vieweralsosee "[R] diffiv" "mansection R diffiv"}{...}
 {viewerjumpto "Syntax" "diffiv##syntax"}{...}

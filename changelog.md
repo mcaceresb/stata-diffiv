@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+## diffiv-0.3.1 (2018-08-09)
+
+### Bug fixes
+
+- Corrected OS checking code.
+- Corrected empty checking code.
+
 ## diffiv-0.3.0 (2018-08-09)
 
 ### Features

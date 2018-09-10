@@ -1,4 +1,4 @@
-*! version 0.3.0 09Sep2018
+*! version 0.3.1 09Sep2018
 *! Gandhi and Houde (2016) style instruments (A3; equation 10)
 
 /*

@@ -1,4 +1,4 @@
-*! version 0.3.0 09Sep2018
+*! version 0.3.1 09Sep2018
 *! Gandhi and Houde (2016) style instruments (A3; equation 10)
 
 /*
@@ -26,8 +26,12 @@ paper. https://pdfs.semanticscholar.org/63a9/b2cd63c4dc08524a6892a800bba302047fa
 
 capture program drop diffiv
 program diffiv, sortpreserve
-    if ( lower("`c(os)'") != "unix" ) {
-        disp as err "-diffiv- is only available for Unix (Linux)."
+    if ( inlist("`c(os)'", "MacOSX") | strpos("`c(machine_type)'", "Mac") ) local c_os_ macosx
+    else local c_os_: di lower("`c(os)'")
+
+    if ( !inlist("`c_os_'", "unix", "macosx") ) {
+        disp as err `"-diffiv- is not available for `c_os_'."'
+        exit 198
     }
 
     diffiv_timer on 90
@@ -68,15 +72,16 @@ program diffiv, sortpreserve
         else {
             confirm name `Z'
             matrix diffiv_empty = J(1, `:list sizeof Z', 0)
-            local i = 1
+            local i = 0
             local newvars
             foreach var of local Z {
+                local ++i
                 cap confirm new var `var'
                 if ( _rc == 0 ) {
                     local newvars `newvars' `var'
                 }
                 else if (`"`if'`in'"' != "") {
-                    matrix diffiv_empty[1, `i++'] = 1
+                    matrix diffiv_empty[1, `i'] = 1
                 }
             }
             if ( `"`newvars'"' != "" ) {

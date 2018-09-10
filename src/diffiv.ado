@@ -72,15 +72,16 @@ program diffiv, sortpreserve
         else {
             confirm name `Z'
             matrix diffiv_empty = J(1, `:list sizeof Z', 0)
-            local i = 1
+            local i = 0
             local newvars
             foreach var of local Z {
+                local ++i
                 cap confirm new var `var'
                 if ( _rc == 0 ) {
                     local newvars `newvars' `var'
                 }
                 else if (`"`if'`in'"' != "") {
-                    matrix diffiv_empty[1, `i++'] = 1
+                    matrix diffiv_empty[1, `i'] = 1
                 }
             }
             if ( `"`newvars'"' != "" ) {

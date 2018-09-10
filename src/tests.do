@@ -33,5 +33,5 @@ sysuse auto, clear
 bys foreign: gen j = _n
 expand 1000
 diffiv priceA3 = price, market(foreign) good(j) bench
-tempfile zz
-save `"`zz'"'
+* tempfile zz
+* save `"`zz'"'

@@ -5,6 +5,7 @@
 {viewerjumpto "Syntax" "diffiv##syntax"}{...}
 {viewerjumpto "Description" "diffiv##description"}{...}
 {viewerjumpto "Examples" "diffiv##examples"}{...}
+{viewerjumpto "References" "diffiv##references"}{...}
 {title:Title}
 
 {p2colset 5 17 17 2}{...}
@@ -34,7 +35,7 @@ To run basic OLS
 {pstd}
 This package implements the A3 version of the instruments proposed by
 Gandhi and Houde (2016). Currently this package is only available in
-Stata for Unix (Linux).
+Stata for Unix (Linux) and OSX.
 
 {pstd}
 The user must additionally specify a variable identifying a good, in
@@ -50,8 +51,9 @@ threshold, or a threshold variable.
 {phang2}{cmd:. diffiv priceIV = price, market(t) good(j)}{p_end}
 {phang2}{cmd:. diffiv priceIV mpgIV = price mpg if foreign, market(t) good(j) replace}{p_end}
 
-{marker author}{...}
-{title:Author}
+{marker references}{...}
+{title:References}
 
-{pstd}Mauricio Caceres{p_end}
-{pstd}{browse "mailto:mauricio.caceres.bravo@gmail.com":mauricio.caceres.bravo@gmail.com}{p_end}
+{pstd}
+Gandhi, Amit and Houde, Jean-Francois. 2016.  Measuring Substitution Patterns
+in Differentiated Product Industries. {it:Working Paper}.

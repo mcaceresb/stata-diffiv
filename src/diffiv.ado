@@ -26,8 +26,12 @@ paper. https://pdfs.semanticscholar.org/63a9/b2cd63c4dc08524a6892a800bba302047fa
 
 capture program drop diffiv
 program diffiv, sortpreserve
-    if ( lower("`c(os)'") != "unix" ) {
-        disp as err "-diffiv- is only available for Unix (Linux)."
+    if ( inlist("`c(os)'", "MacOSX") | strpos("`c(machine_type)'", "Mac") ) local c_os_ macosx
+    else local c_os_: di lower("`c(os)'")
+
+    if ( !inlist("`c_os_'", "unix", "macosx") ) {
+        disp as err `"-diffiv- is not available for `c_os_'."'
+        exit 198
     }
 
     diffiv_timer on 90

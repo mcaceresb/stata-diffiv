@@ -18,15 +18,16 @@ if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
     echo "Committing OSX files."
     git commit -m "[Travis] Add plugin output for OSX build"
 
-    openssl aes-256-cbc -K $encrypted_e1735dcdef59_key -iv $encrypted_e1735dcdef59_iv -in lib/id_rsa_travis.enc -out lib/id_rsa_travis -d
-    chmod 600 lib/id_rsa_travis
+    ID_RSA=lib/id_rsa_travis_diffiv
+    openssl aes-256-cbc -K $encrypted_22e162ff729d_key -iv $encrypted_22e162ff729d_iv -in ${ID_RSA}.enc -out ${ID_RSA} -d
+    chmod 600 ${ID_RSA}
     eval `ssh-agent -s`
-    ssh-add lib/id_rsa_travis
+    ssh-add ${ID_RSA}
 
     echo "Pushing OSX files."
     git push -f ${SSH_REPO} osx
 
-    rm -f lib/id_rsa_travis
+    rm -f ${ID_RSA}
 
     echo "Done"
 fi

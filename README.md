@@ -5,6 +5,7 @@ Fast implementation of Gandhi and Houde (2016) style instruments.
 Currently this package is only available in Stata for Unix (Linux).
 
 `version 0.2.0 04Sep2018`
+Builds: Linux, OSX [![Travis Build Status](https://api.travis-ci.org/mcaceresb/stata-diffiv.svg?branch=develop)](https://travis-ci.org/mcaceresb/stata-diffiv),
 
 Installation
 ------------

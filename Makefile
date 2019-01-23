@@ -41,6 +41,11 @@ diffiv: src/diffiv.c src/spi/stplugin.c
 	$(GCC) $(CFLAGS) -o $(OUT) src/spi/stplugin.c src/diffiv.c
 	cp build/*plugin lib/plugin/
 
+osx_plugins:
+	wget https://raw.githubusercontent.com/mcaceresb/stata-diffiv/osx/build/gtools_macosx.plugin
+	cp -f gtools_macosx.plugin build/gtools_macosx.plugin
+	mv -f gtools_macosx.plugin lib/plugin/gtools_macosx.plugin
+
 .PHONY: clean
 clean:
 	rm -f $(OUT)

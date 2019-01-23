@@ -6,4 +6,4 @@ os:
 - osx
 script:
 - make clean && make all
-# - "./lib/travis_build_push.sh"
+- "./lib/travis_build_push.sh"
